@@ -1,0 +1,27 @@
+GET http://localhost:3000
+
+
+###
+
+GET http://localhost:3000/songs
+
+###
+POST  http://localhost:3000/songs
+Content-Type: application/json
+
+{
+    "title": "lolo",
+    "artists": ["Omah Lay"],
+    "releasedData": "2025-11-01",
+    "duration": "02:56"
+}
+
+###
+GET   http://localhost:3000/songs/1
+
+###
+PUT   http://localhost:3000/songs/1
+
+###
+
+DELETE   http://localhost:3000/songs/1
