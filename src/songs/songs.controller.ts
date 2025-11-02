@@ -9,18 +9,28 @@ import {
   HttpStatus,
   Param,
   ParseIntPipe,
+  Inject,
 } from '@nestjs/common';
 import { SongsService } from './songs.service';
 import { CreateSongDTO } from './dto/create-song-dto';
+import type { Connection } from 'src/common/constants/connection';
 
 @Controller('songs')
 export class SongsController {
-  constructor(private readonly SongsService: SongsService) {}
+  constructor(
+    private readonly songsService: SongsService,
+    @Inject('CONNECTION')
+    private connection: Connection,
+  ) {
+    console.log(
+      `THIS IS CONNECTION STRING ${this.connection.CONNECTION_STRING}`,
+    );
+  }
 
   @Get()
   findAll() {
     try {
-      return this.SongsService.findAll();
+      return this.songsService.findAll();
     } catch (error) {
       console.log(error.message);
       throw new HttpException(
@@ -35,7 +45,7 @@ export class SongsController {
 
   @Post()
   create(@Body() CreateSongDTO: CreateSongDTO) {
-    return this.SongsService.create(CreateSongDTO);
+    return this.songsService.create(CreateSongDTO);
   }
 
   @Get('/:id')

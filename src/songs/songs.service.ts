@@ -10,7 +10,7 @@ export class SongsService {
   }
   findAll() {
     // get the songs from the data base
-    throw new Error('Error while trying to fetch all songs');
+    // throw new Error('Error while trying to fetch all songs');
     return this.songs;
   }
 }
