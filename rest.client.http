@@ -11,7 +11,7 @@ Content-Type: application/json
 
 {
     "title": "lolo",
-    "artists": ["Omah Lay"],
+    "artists": ["Omah Lay", "solomon"],
     "releasedData": "2025-11-01",
     "duration": "02:56"
 }
