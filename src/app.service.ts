@@ -1,7 +1,7 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, Scope } from '@nestjs/common';
 import { DevConfigService } from './common/providers/DevConfigService';
 
-@Injectable()
+@Injectable({ scope: Scope.TRANSIENT })
 export class AppService {
   constructor(
     private DevConfigService: DevConfigService,

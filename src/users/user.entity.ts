@@ -1,0 +1,3 @@
+
+// @colume('text')
+// lyrics: string
